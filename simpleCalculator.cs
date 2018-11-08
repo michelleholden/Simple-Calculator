@@ -11,34 +11,42 @@ namespace simpleCalculator{
             double answer;
 
             Console.WriteLine("Please enter the first number.");
-            num1= Convert.ToDouble(Console.ReadLine());
+            num1 = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Please enter the second number.");
-            num2= Convert.ToDouble(Console.ReadLine());
+            num2 = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Please enter an operator from this list: +,-,*,/,%,^.");
-            op= Convert.ToString(Console.ReadLine());
-           
-            if(op == "+"){
-                answer= num1+num2;
+            op = Convert.ToString(Console.ReadLine());
+
+            switch (op) {
+              case "+":
+                answer = num1 + num2;
                 Console.WriteLine($"{num1} {op} {num2} = {answer}");
-            }else if(op == "-"){
-                answer= num1-num2;
+                break;
+              case "-":
+                answer = num1 - num2;
                 Console.WriteLine($"{num1} {op} {num2} = {answer}");
-            }else if(op == "*"){
-                answer= num1*num2;
+                break;
+              case "*":
+                answer = num1 * num2;
                 Console.WriteLine($"{num1} {op} {num2} = {answer}");
-            }else if(op == "/"){
-                answer= num1-num2;
+                break;
+              case "/":
+                answer = (num1 / num2);
                 Console.WriteLine($"{num1} {op} {num2} = {answer}");
-            }else if(op == "^"){
-                answer= Math.Pow(num1,num2);
+                break;
+              case "^":
+                answer = Math.Pow(num1,num2);
                 Console.WriteLine($"{num1} {op} {num2} = {answer}");
-            }else if(op == "%"){
-                answer= num1%num2;
+                break;
+              case "%":
+                answer = num1 % num2;
                 Console.WriteLine($"{num1} {op} {num2} = {answer}");
-            }else{
+                break;
+              default:
                 Console.WriteLine("You did not pick the right operator.");
+                break;
             }
 
         }
